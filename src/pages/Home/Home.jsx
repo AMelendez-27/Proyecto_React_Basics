@@ -1,6 +1,7 @@
 import './Home.css'
 import GetCardby from '../../components/GetCardby/GetCardby'
-import GetRandomTCG from '../../components/GetRandomTCG/GetRandomTCG'
+import GetHighestPriced from '../../components/GetHighestPriced/GetHighestPriced'
+import GetMultipleCardsby from '../../components/GetMultipleCardsby/GetMultipleCardsby'
 
 const Home = () => {
   return (
@@ -19,7 +20,8 @@ const Home = () => {
          <GetCardby filterType={'id'} filterData={'GG70'}/>
       </div>
       <div className='home-random-showcase'>
-         <GetRandomTCG />
+         <GetHighestPriced cardCuantity={20}/>
+         <GetMultipleCardsby filterType={'name'} filterData={'arceus'} cardCuantity={20}/>
       </div>
     </div>
   )
