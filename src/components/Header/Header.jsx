@@ -8,16 +8,16 @@ const Header = () => {
       <nav>
         <ul>
           <li>
-            <NavLink to="/">Home</NavLink>
+            <NavLink to="/" className={({isActive})  => isActive ? "active" : ""}>Home</NavLink>
           </li>
           <li>
-            <NavLink to="/pokemon-by-name">Pokemon por name</NavLink>
+            <NavLink to="/browse-pokemon" className={({isActive})  => isActive ? "active" : ""}>Browse pokemon</NavLink>
           </li>
           <li>
-            <NavLink to="/pokemon-by-id">Pokemon por id</NavLink>
+            <NavLink to="/explore-sets" className={({isActive})  => isActive ? "active" : ""}>Explore sets</NavLink>
           </li>
           <li>
-            <NavLink to="/about">About</NavLink>
+            <NavLink to="/about" className={({isActive})  => isActive ? "active" : ""}>About</NavLink>
           </li>
         </ul>
       </nav>

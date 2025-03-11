@@ -1,12 +1,31 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 :root {
   --text-color: #fff;
-  --bg-color:  rgb(36, 36, 36);
+  --dark: rgb(32, 38, 50);
+  --bg: rgb(55, 74, 103);
+  --medium: rgb(97, 98, 131);
+  --light: rgb(158, 123, 155);
+  --very-light: rgb(198, 146, 240);
 }
 
 body {
-  background-color: var(--bg-color);
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--bg);
 }
 
-H1 {
-  color: var(--text-color);
+h1 {
+  color: var(--very-light);
+  font-size: 70px;
+  text-align: center;
+}
+
+h2 {
+  color: var(--very-light);
+  font-size: 40px;
+  text-align: center;
 }
