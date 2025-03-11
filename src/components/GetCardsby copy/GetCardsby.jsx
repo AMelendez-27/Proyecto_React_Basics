@@ -1,7 +1,7 @@
-import "./GetCardby.css"
+import "./GetCardsby.css"
 import React, { useState, useEffect } from 'react';
 
-const GetCardby = ({ filterType, filterData }) => {
+const GetCardsby = ({ filterType, filterData }) => {
   const [cardImg, setCardImg] = useState([]);
 
   useEffect(() => {
@@ -21,20 +21,22 @@ const GetCardby = ({ filterType, filterData }) => {
         return;
     }
 
-    fetch(`https://api.pokemontcg.io/v2/cards?q=${query}`)
+    for (let step = 0; step < 5; step++) {
+      fetch(`https://api.pokemontcg.io/v2/cards?q=${query}`)
       .then(response => response.json())
       .then((response) => {
         if (response.data && response.data.length > 0) {
           setCardImg(response.data[0]);
         }
       });
+    }
   }, [filterType, filterData]);
 
   return (
     <div className='home-section random-generated-tcg-card tcg-card-container'>
-      {cardImg.images && <img src={cardImg.images.large} alt={`Card image of ${cardImg.name}`} />}
+      {cardImg && <img src={cardImg.images.large} alt={`Card image of ${cardImg.name}`} />}
     </div>
   );
 }
 
-export default GetCardby;
+export default GetCardsby;

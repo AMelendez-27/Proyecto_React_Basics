@@ -1,5 +1,5 @@
 import './Home.css'
-import GetCardby from '../../components/GetCardBy/GetCardby'
+import GetCardby from '../../components/GetCardby/GetCardby'
 import GetRandomTCG from '../../components/GetRandomTCG/GetRandomTCG'
 
 const Home = () => {
