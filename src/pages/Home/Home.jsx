@@ -1,7 +1,7 @@
 import './Home.css'
 import GetCardby from '../../components/GetCardby/GetCardby'
 import GetHomePageCards from '../../components/GetHomePageCards/GetHomePageCards'
-import GetMultipleCardsby from '../../components/GetMultipleCardsby/GetMultipleCardsby'
+import GetMultipleCardsBy from '../../components/GetMultipleCardsBy/GetMultipleCardsBy'
 
 const Home = () => {
   return (

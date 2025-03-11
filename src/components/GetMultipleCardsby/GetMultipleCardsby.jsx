@@ -1,7 +1,7 @@
-import "./GetMultipleCardsby.css"
+import "./GetMultipleCardsBy.css"
 import React, { useState, useEffect } from 'react';
 
-const GetMultipleCardsby = ({ filterType, filterData, cardCuantity }) => {
+const GetMultipleCardsBy = ({ filterType, filterData, cardCuantity }) => {
   const [cardsImgs, setCardsImgs] = useState([]);
 
   filterData.split(' ').join('_');
@@ -47,4 +47,4 @@ const GetMultipleCardsby = ({ filterType, filterData, cardCuantity }) => {
   );
 }
 
-export default GetMultipleCardsby;
+export default GetMultipleCardsBy;
