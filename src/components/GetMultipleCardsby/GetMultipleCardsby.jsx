@@ -2,7 +2,7 @@ import "./GetMultipleCardsby.css"
 import React, { useState, useEffect } from 'react';
 
 const GetMultipleCardsby = ({ filterType, filterData, cardCuantity }) => {
-  const [cardImg, setCardImg] = useState([]);
+  const [cardImgs, setCardImgs] = useState([]);
 
   useEffect(() => {
     let query = '';
@@ -21,21 +21,25 @@ const GetMultipleCardsby = ({ filterType, filterData, cardCuantity }) => {
         return;
     }
 
-    for (let i = 0; i < cardCuantity; i++) {
-      fetch(`https://api.pokemontcg.io/v2/cards?q=${query}`)
-      .then(response => response.json())
-      .then((response) => {
-        if (response.data && response.data.length > 0) {
-          setCardImg(response.data[i]);
+    const fetchCards = async () => {
+      const fetchedCards = [];
+      for (let i = 0; i < cardCuantity; i++) {
+        const response = await fetch(`https://api.pokemontcg.io/v2/cards?q=${query}`);
+        const data = await response.json();
+        if (data.data && data.data.length > 0) {
+          fetchedCards.push(data.data[i]);
         }
-      });
-    }
-  }, [filterType, filterData]);
+      }
+      setCardImgs(fetchedCards);
+    };
+
+    fetchCards();
+  }, [filterType, filterData, cardCuantity]);
 
   return (
-    <div className='home-section random-generated-tcg-card tcg-card-container'>
-      {data.map((cardImg) => (
-        <img key={cardImg.id} src={cardImg.images.large} alt={`Card image of ${cardImg.name}`} />
+    <div className='home-section multiple-tcg-card tcg-card-container'>
+      {cardImgs.map((cardImg, index) => (
+        cardImg.images && <img key={index} src={cardImg.images.small} alt={`Card image of ${cardImg.name}`} />
       ))}
     </div>
   );

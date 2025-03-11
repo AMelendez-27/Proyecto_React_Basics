@@ -31,7 +31,7 @@ const GetCardby = ({ filterType, filterData }) => {
   }, [filterType, filterData]);
 
   return (
-    <div className='home-section random-generated-tcg-card tcg-card-container'>
+    <div className='home-section single-tcg-card tcg-card-container'>
       {cardImg.images && <img src={cardImg.images.large} alt={`Card image of ${cardImg.name}`} />}
     </div>
   );

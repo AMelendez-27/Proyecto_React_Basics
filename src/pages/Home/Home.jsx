@@ -21,7 +21,7 @@ const Home = () => {
       </div>
       <div className='home-random-showcase'>
          <GetHighestPriced cardCuantity={20}/>
-         <GetMultipleCardsby filterType={'name'} filterData={'arceus'} cardCuantity={20}/>
+         <GetMultipleCardsby filterType={'name'} filterData={'arceus'} cardCuantity={5}/>
       </div>
     </div>
   )
