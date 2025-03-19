@@ -1,7 +1,7 @@
 import './Home.css'
-import GetCardby from '../../components/GetCardby/GetCardby'
-import GetHomePageCards from '../../components/GetHomePageCards/GetHomePageCards'
-import GetMultipleCardsBy from '../../components/GetMultipleCardsBy/GetMultipleCardsBy'
+import GetCardBy from '../../components/GetCardBy/GetCardBy'
+import GetSetHighestPriced from '../../components/GetSetHighestPriced/GetSetHighestPriced'
+import GetCardCollection from '../../components/GetCardCollection/GetCardCollection'
 
 const Home = () => {
   return (
@@ -17,10 +17,11 @@ const Home = () => {
          <p className='hero-end-quote'>
          We hope you enjoy your stay in our library and that you find all the information you need about the Pokemon TCG world.
          </p>
-         <GetCardby filterType={'id'} filterData={'GG70'}/>
+         <GetCardBy filterType={'id'} filterData={'GG70'}/>
       </div>
       <div className='home-random-showcase'>
-         <GetHomePageCards set={'Prismatic Evolutions'} cardCuantity={17}/>
+         {/* <GetSetHighestPriced set={'Prismatic Evolutions'} cardCuantity={17}/> */}
+         <GetCardCollection filterType={'id'} collection={['swsh8-271', 'swsh7-218', 'swsh7-215', 'swsh11-180', 'swsh11-186', 'swsh12pt5gg-GG67', 'swsh12pt5gg-GG68', 'swsh12pt5gg-GG69', 'swsh12pt5gg-GG70', 'sv8-238', 'sv8-239', 'sv8-246', 'sv8pt5-161', 'sv8pt5-156', 'sv8pt5-144', 'sv8pt5-155', 'sv8pt5-146', 'sv8pt5-153', 'sv8pt5-149', 'sv8pt5-167', 'sv8pt5-147']}/>
       </div>
     </div>
   )

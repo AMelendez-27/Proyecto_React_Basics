@@ -1,7 +1,7 @@
-import "./GetCardby.css"
+import "./GetCardBy.css"
 import React, { useState, useEffect } from 'react';
 
-const GetCardby = ({ filterType, filterData }) => {
+const GetCardBy = ({ filterType, filterData }) => {
   const [cardImg, setCardImg] = useState([]);
 
   useEffect(() => {
@@ -37,4 +37,4 @@ const GetCardby = ({ filterType, filterData }) => {
   );
 }
 
-export default GetCardby;
+export default GetCardBy;

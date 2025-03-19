@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import "./GetHomePageCards.css"
+import "./GetSetHighestPriced.css"
 
-const GetHomePageCards = ({ set, cardCuantity }) => {
+const GetSetHighestPriced = ({ set, cardCuantity }) => {
   const [cardsImgs, setCardsImgs] = useState([]);
 
   set.split(' ').join('_');
@@ -9,7 +9,6 @@ const GetHomePageCards = ({ set, cardCuantity }) => {
   useEffect(() => {
     const fetchCards = async () => {
       const fetchedCards = [];
-      //const response = await fetch(`https://api.pokemontcg.io/v2/cards?orderBy=-tcgplayer.prices.holofoil.mid`);
       const response = await fetch(`https://api.pokemontcg.io/v2/cards?q=set.name:"${set}"&orderBy=-tcgplayer.prices.holofoil.mid`);
       const data = await response.json();
       if (data.data && data.data.length > 0) {
@@ -32,4 +31,4 @@ const GetHomePageCards = ({ set, cardCuantity }) => {
   );
 }
 
-export default GetHomePageCards;
+export default GetSetHighestPriced;
