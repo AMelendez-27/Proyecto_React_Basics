@@ -1,0 +1,78 @@
+import React, { useState, useEffect } from 'react';
+import './PokemonById.css';
+import { useParams } from 'react-router-dom';
+
+const PokemonById = () => {
+  const { id } = useParams();
+  const [pokemon, setPokemon] = useState(null);
+
+  useEffect(() => {
+    fetch(`https://api.pokemontcg.io/v2/cards?q=id:${id}`)
+      .then((response) => response.json())
+      .then((response) => {
+        if (response.data && response.data.length > 0) {
+          setPokemon(response.data[0]);
+        }
+      })
+      .catch((error) => {
+        console.error("Error fetching Pokemon:", error);
+      });
+  }, [id]);
+
+  if (!pokemon) {
+    return <div className='loading-message'>Loading...</div>;
+  }
+
+  return (
+    <div className='browser-pokemon pokemon-info'>
+      <div className='pokemon-img'>
+        <img src={pokemon.images.large} alt={`Image of ${pokemon.name} TCG card`} />
+      </div>
+      <div className='pokemon-info info'>
+        <h2>{pokemon.name}</h2>
+        <div className='pokemon-details'>
+          <h3>Info</h3>
+          <p>Set collection: {pokemon.set.name}</p>
+          <p>Rarity: {pokemon.rarity}</p>
+          <p>Number: {pokemon.number}</p>
+          <p>Artist: {pokemon.artist}</p>
+        </div>
+
+        {/* Renderiza pokemon-prices solo si pokemon.tcgplayer existe */}
+        {pokemon.tcgplayer && pokemon.tcgplayer.prices && (
+          <div className='pokemon-prices'>
+            <h3>Card market prices</h3>
+            <div>
+              {pokemon.tcgplayer.prices.normal && (
+                <div>
+                  <h4>Normal card prices</h4>
+                  <p>Low price: {pokemon.tcgplayer.prices.normal.low}</p>
+                  <p>Mid price: {pokemon.tcgplayer.prices.normal.mid}</p>
+                  <p>High price: {pokemon.tcgplayer.prices.normal.high}</p>
+                </div>
+              )}
+              {pokemon.tcgplayer.prices.reverseHolofoil && (
+                <div>
+                  <h4>Reverse Holofoil card prices</h4>
+                  <p>Low price: {pokemon.tcgplayer.prices.reverseHolofoil.low}</p>
+                  <p>Mid price: {pokemon.tcgplayer.prices.reverseHolofoil.mid}</p>
+                  <p>High price: {pokemon.tcgplayer.prices.reverseHolofoil.high}</p>
+                </div>
+              )}
+              {pokemon.tcgplayer.prices.holofoil && (
+                <div>
+                  <h4>Holofoil card prices</h4>
+                  <p>Low price: {pokemon.tcgplayer.prices.holofoil.low}</p>
+                  <p>Mid price: {pokemon.tcgplayer.prices.holofoil.mid}</p>
+                  <p>High price: {pokemon.tcgplayer.prices.holofoil.high}</p>
+                </div>
+              )}
+            </div>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+};
+
+export default PokemonById;
