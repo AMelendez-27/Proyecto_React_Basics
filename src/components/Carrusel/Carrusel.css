@@ -1,0 +1,68 @@
+.carrusel-container {
+  width: 80vw;
+  overflow: hidden;
+  position: relative;
+}
+
+.carrusel {
+  display: flex;
+  animation: moverImagenes 20s linear infinite; /* Animación continua */
+}
+
+.carrusel-container::before, .carrusel-container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 20px; /* El grosor del sombreado */
+  z-index: 1; /* Asegura que la sombra quede encima del contenido */
+}
+
+.carrusel-container::before {
+  left: 0; /* Sombra en el lado izquierdo */
+  box-shadow: inset 10px 0 15px -9px rgb(0, 0, 0); /* Sombra difusa dentro del contenedor */
+}
+
+.carrusel-container::after {
+  right: 0; /* Sombra en el lado derecho */
+  box-shadow: inset -10px 0 15px -9px rgb(0, 0, 0); /* Sombra difusa dentro del contenedor */
+}
+.carrusel img {
+  width: 10vw;
+  height: fit-content;
+  margin-right: 15px;
+}
+
+@media screen and (min-width: 2540px) {
+  @keyframes moverImagenes {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-132.2%); /* Desplazamos las imágenes hasta la mitad del carrusel duplicado */
+    }
+  }
+}
+  
+
+@media screen and (min-width: 1920px) and (max-width: 2538px) {
+  @keyframes moverImagenes {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-134.8%); /* Desplazamos las imágenes hasta la mitad del carrusel duplicado */
+    }
+  }
+}
+
+@media screen and (min-width: 720px) and (max-width: 1919px) {
+  @keyframes moverImagenes {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-134.8%); /* Desplazamos las imágenes hasta la mitad del carrusel duplicado */
+    }
+  }
+}

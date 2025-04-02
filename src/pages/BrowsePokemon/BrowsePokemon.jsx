@@ -56,7 +56,6 @@ const BrowsePokemon = () => {
         <GetSetCards set={'Prismatic Evolutions'} />
       </div>
     </div>
-
   )
 }
 
