@@ -1,0 +1,21 @@
+.pokemon-browser-section {
+  display: flex;
+  flex-direction: column;
+  width: 90vw;
+  gap: 30px;
+}
+
+#cards-showcase {
+  width: 100%;
+  height: fit-content;
+}
+
+.tcg-card-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+  height: fit-content;
+  gap: 5px;
+}

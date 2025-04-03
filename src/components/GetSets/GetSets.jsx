@@ -22,7 +22,7 @@ const GetSets = () => {
   }, []);
 
   return (
-    <div className='home-section tcg-set-container'>
+    <div className='home-section tcg-sets-container'>
       {setsImgs.map((setImg) => (
         <Link key={setImg.id} className={'tcg-set'} id={`${setImg.id}`} to={`/explore-sets/${setImg.name}`}>
           <img key={setImg.id} src={setImg.images.logo} alt={`Set image of ${setImg.name}`} />

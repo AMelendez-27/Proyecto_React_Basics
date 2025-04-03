@@ -1,0 +1,26 @@
+#sets-showcase {
+  width: 100%;
+  height: fit-content;
+}
+
+.tcg-sets-container {
+  display: flex;
+  width: 100%;
+  height: fit-content;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 25px;
+}
+
+.tcg-set {
+  max-width: 400px;
+  height: fit-content;
+}
+
+.tcg-set img {
+  width: 100%;
+  max-height: 180px;
+  object-fit: cover;
+  object-position: center;
+}

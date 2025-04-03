@@ -11,6 +11,7 @@
   --medium: rgb(97, 98, 131);
   --light: rgb(158, 123, 155);
   --very-light: rgb(198, 146, 240);
+  --Tt: rgb(203, 156, 242);
 }
 
 body {
@@ -21,13 +22,124 @@ body {
 }
 
 h1 {
-  color: var(--very-light);
-  font-size: 60px;
+  color: var(--Tt);
+  font-size: 55px;
   text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  font-weight: 800;
 }
 
 h2 {
-  color: var(--very-light);
-  font-size: 45px;
+  color: var(--Tt);
+  font-size: 44px;
   text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+p {
+  color: var(--very-light);
+  font-size: 27px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.content {
+  width: 90vw;
+  height: fit-content;
+  display: flex;
+  justify-content: center;
+  margin: 140px 0 30px 0;
+}
+
+@media screen and (max-width: 908px) {
+  h1 {
+    color: var(--Tt);
+    font-size: 42px;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-weight: 800;
+  }
+  
+  h2 {
+    color: var(--Tt);
+    font-size: 30px;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+}
+
+@media screen and (min-width: 701px) and (max-width: 890px) {
+  p {
+    color: var(--very-light);
+    font-size: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+}
+
+@media screen and (min-width: 421px) and (max-width: 700px) {
+  h1 {
+    color: var(--Tt);
+    font-size: 6vw;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-weight: 800;
+  }
+  
+  h2 {
+    color: var(--Tt);
+    font-size: 4.3vw;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+
+  p {
+    color: var(--very-light);
+    font-size: 18px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+}
+
+@media screen and (min-width: 330px) and (max-width: 420px) {
+  h1 {
+    color: var(--Tt);
+    font-size: 8vw;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-weight: 800;
+  }
+  
+  h2 {
+    color: var(--Tt);
+    font-size: 6vw;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+
+  p {
+    color: var(--very-light);
+    font-size: 18px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+}
+
+@media screen and (max-width: 329px) {
+  h1 {
+    color: var(--Tt);
+    font-size: 25px;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-weight: 800;
+  }
+  
+  h2 {
+    color: var(--Tt);
+    font-size: 20px;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+
+  p {
+    color: var(--very-light);
+    font-size: 18px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
 }

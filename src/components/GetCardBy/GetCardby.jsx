@@ -1,5 +1,6 @@
 import "./GetCardBy.css"
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 const GetCardBy = ({ filterType, filterData }) => {
   const [cardImg, setCardImg] = useState([]);
@@ -32,7 +33,9 @@ const GetCardBy = ({ filterType, filterData }) => {
 
   return (
     <div className='home-section single-tcg-card tcg-card-container'>
-      {cardImg.images && <img src={cardImg.images.large} alt={`Card image of ${cardImg.name}`} />}
+      <Link key={cardImg.id} className={'browsed-tcg'} id={`${cardImg.id}`} to={`/browse-pokemon/${cardImg.id}`}>
+        {cardImg.images && <img src={cardImg.images.large} alt={`Card image of ${cardImg.name}`} />}
+      </Link>
     </div>
   );
 }

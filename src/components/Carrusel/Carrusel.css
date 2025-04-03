@@ -6,7 +6,7 @@
 
 .carrusel {
   display: flex;
-  animation: moverImagenes 20s linear infinite; /* Animación continua */
+  animation: moverImagenes 20s linear infinite; 
 }
 
 .carrusel-container::before, .carrusel-container::after {
@@ -14,24 +14,35 @@
   position: absolute;
   top: 0;
   bottom: 0;
-  width: 20px; /* El grosor del sombreado */
-  z-index: 1; /* Asegura que la sombra quede encima del contenido */
+  width: 20px; 
+  z-index: 1; 
 }
 
 .carrusel-container::before {
   left: 0; /* Sombra en el lado izquierdo */
-  box-shadow: inset 10px 0 15px -9px rgb(0, 0, 0); /* Sombra difusa dentro del contenedor */
+  box-shadow: inset 10px 0 15px -9px rgb(0, 0, 0); 
 }
 
 .carrusel-container::after {
   right: 0; /* Sombra en el lado derecho */
-  box-shadow: inset -10px 0 15px -9px rgb(0, 0, 0); /* Sombra difusa dentro del contenedor */
+  box-shadow: inset -10px 0 15px -9px rgb(0, 0, 0); 
 }
 .carrusel img {
-  width: 10vw;
+  width: 8vw;
+  min-width: 153.59px;
   height: fit-content;
   margin-right: 15px;
 }
+
+@keyframes moverImagenes {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
 
 @media screen and (min-width: 2540px) {
   @keyframes moverImagenes {
@@ -39,7 +50,7 @@
       transform: translateX(0);
     }
     100% {
-      transform: translateX(-132.2%); /* Desplazamos las imágenes hasta la mitad del carrusel duplicado */
+      transform: translateX(-107.4%);
     }
   }
 }
@@ -51,18 +62,36 @@
       transform: translateX(0);
     }
     100% {
-      transform: translateX(-134.8%); /* Desplazamos las imágenes hasta la mitad del carrusel duplicado */
+      transform: translateX(-109.7%);
     }
   }
 }
 
-@media screen and (min-width: 720px) and (max-width: 1919px) {
+@media screen and (min-width: 1280px) and (max-width: 1919px) {
   @keyframes moverImagenes {
     0% {
       transform: translateX(0);
     }
     100% {
-      transform: translateX(-134.8%); /* Desplazamos las imágenes hasta la mitad del carrusel duplicado */
+      transform: translateX(-134.8%);
     }
   }
 }
+
+@media screen and (max-width: 500px) {
+  .carrusel {
+    display: flex;
+    animation: moverImagenes 10s linear infinite; 
+  }
+
+  @keyframes moverImagenes {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-530.8%);
+    }
+  }
+}
+
+
