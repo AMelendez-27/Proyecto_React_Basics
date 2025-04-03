@@ -7,6 +7,7 @@
 :root {
   --text-color: #fff;
   --dark: rgb(32, 38, 50);
+  --txt-bg: rgba(32, 38, 50, 0.404);
   --bg: rgb(55, 74, 103);
   --medium: rgb(97, 98, 131);
   --light: rgb(158, 123, 155);
@@ -36,6 +37,20 @@ h2 {
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
+h3 {
+  color: var(--Tt);
+  font-size: 44px;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+h4 {
+  color: var(--very-light);
+  font-size: 32px;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
 p {
   color: var(--very-light);
   font-size: 27px;
@@ -47,7 +62,7 @@ p {
   height: fit-content;
   display: flex;
   justify-content: center;
-  margin: 140px 0 30px 0;
+  margin: 140px 0 70px 0;
 }
 
 @media screen and (max-width: 908px) {
@@ -62,6 +77,20 @@ p {
   h2 {
     color: var(--Tt);
     font-size: 30px;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+
+  h3 {
+    color: var(--Tt);
+    font-size: 25px;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+
+  h4 {
+    color: var(--Tt);
+    font-size: 25px;
     text-align: center;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   }
@@ -91,6 +120,20 @@ p {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   }
 
+  h3 {
+    color: var(--Tt);
+    font-size: 4vw;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+
+  h4 {
+    color: var(--Tt);
+    font-size: 4vw;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+
   p {
     color: var(--very-light);
     font-size: 18px;
@@ -114,6 +157,20 @@ p {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   }
 
+  h3 {
+    color: var(--Tt);
+    font-size: 5vw;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+
+  h4 {
+    color: var(--Tt);
+    font-size: 5vw;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+  
   p {
     color: var(--very-light);
     font-size: 18px;
@@ -131,6 +188,20 @@ p {
   }
   
   h2 {
+    color: var(--Tt);
+    font-size: 20px;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+
+  h3 {
+    color: var(--Tt);
+    font-size: 20px;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+
+  h4 {
     color: var(--Tt);
     font-size: 20px;
     text-align: center;

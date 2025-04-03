@@ -6,7 +6,7 @@ const BrowsePokemon = () => {
   return (
     <div className='pokemon-browser-section'>
       <div className='pokemon-browser browser-container'>
-        <h1 className='pokemon-browser browser-title'>Latest set released pokemon</h1>
+        <h1 className='pokemon-browser browser-title'>Latest Pokemon TCG set released</h1>
 {/*         <input className='pokemon-browser browser-input' id='pokemon-name-filter' placeholder='Enter Pokemon name'/>
         <input className='pokemon-browser browser-input' id='pokemon-set-filter' placeholder='Enter Pokemon TCG set'/>
         <select className='pokemon-browser browser-input' id='pokemon-rarity-filter'>
@@ -50,7 +50,7 @@ const BrowsePokemon = () => {
         <button className='pokemon-browser pokemon-browser-button'>Search</button> */}
       </div>
       <div id='cards-showcase' className='pokemon-browser results-container active'>
-        <GetSetCards set={'Prismatic Evolutions'} />
+        <GetSetCards set={'Journey Together'} />
       </div>
       {/* <div id='filter-search' className='pokemon-browser results-container'>
         <GetSetCards set={'Prismatic Evolutions'} />

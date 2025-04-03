@@ -6,7 +6,7 @@ const ExploreSets = () => {
   return (
 <div className='pokemon-browser-section'>
       <div className='pokemon-browser browser-container'>
-        <h1 className='pokemon-browser browser-title'>Explore Sets</h1>
+        <h1 className='pokemon-browser browser-title'>Explore sets</h1>
       </div>
       <div id='sets-showcase' className='pokemon-browser results-container'>
         <GetSets />

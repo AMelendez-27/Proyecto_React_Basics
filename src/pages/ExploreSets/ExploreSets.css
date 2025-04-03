@@ -1,3 +1,10 @@
+.pokemon-browser-section {
+  display: flex;
+  flex-direction: column;
+  width: 90vw;
+  gap: 30px;
+}
+
 #sets-showcase {
   width: 100%;
   height: fit-content;

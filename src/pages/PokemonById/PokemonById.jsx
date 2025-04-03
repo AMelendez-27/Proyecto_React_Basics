@@ -24,47 +24,47 @@ const PokemonById = () => {
   }
 
   return (
-    <div className='browser-pokemon pokemon-info'>
-      <div className='pokemon-img'>
+    <div className='browser-pokemon card-data'>
+      <div className='card-img'>
         <img src={pokemon.images.large} alt={`Image of ${pokemon.name} TCG card`} />
       </div>
-      <div className='pokemon-info info'>
-        <h2>{pokemon.name}</h2>
-        <div className='pokemon-details'>
+      <div className='card-info'>
+        <h2 className='card-name'>{pokemon.name}</h2>
+        <div className='card-details'>
           <h3>Info</h3>
           <p>Set collection: {pokemon.set.name}</p>
           <p>Rarity: {pokemon.rarity}</p>
           <p>Number: {pokemon.number}</p>
-          <p>Artist: {pokemon.artist}</p>
+          <p>Release date: {pokemon.set.releaseDate}</p>
         </div>
 
         {/* Renderiza pokemon-prices solo si pokemon.tcgplayer existe */}
         {pokemon.tcgplayer && pokemon.tcgplayer.prices && (
-          <div className='pokemon-prices'>
+          <div className='card-prices-container'>
             <h3>Card market prices</h3>
-            <div>
+            <div className='card-prices-info'>
               {pokemon.tcgplayer.prices.normal && (
-                <div>
+                <div className='card-prices'>
                   <h4>Normal card prices</h4>
-                  <p>Low price: {pokemon.tcgplayer.prices.normal.low}</p>
-                  <p>Mid price: {pokemon.tcgplayer.prices.normal.mid}</p>
-                  <p>High price: {pokemon.tcgplayer.prices.normal.high}</p>
+                  <p>Low price: {pokemon.tcgplayer.prices.normal.low}$</p>
+                  <p>Mid price: {pokemon.tcgplayer.prices.normal.mid}$</p>
+                  <p>High price: {pokemon.tcgplayer.prices.normal.high}$</p>
                 </div>
               )}
               {pokemon.tcgplayer.prices.reverseHolofoil && (
-                <div>
+                <div className='card-prices'>
                   <h4>Reverse Holofoil card prices</h4>
-                  <p>Low price: {pokemon.tcgplayer.prices.reverseHolofoil.low}</p>
-                  <p>Mid price: {pokemon.tcgplayer.prices.reverseHolofoil.mid}</p>
-                  <p>High price: {pokemon.tcgplayer.prices.reverseHolofoil.high}</p>
+                  <p>Low price: {pokemon.tcgplayer.prices.reverseHolofoil.low}$</p>
+                  <p>Mid price: {pokemon.tcgplayer.prices.reverseHolofoil.mid}$</p>
+                  <p>High price: {pokemon.tcgplayer.prices.reverseHolofoil.high}$</p>
                 </div>
               )}
               {pokemon.tcgplayer.prices.holofoil && (
-                <div>
+                <div className='card-prices'>
                   <h4>Holofoil card prices</h4>
-                  <p>Low price: {pokemon.tcgplayer.prices.holofoil.low}</p>
-                  <p>Mid price: {pokemon.tcgplayer.prices.holofoil.mid}</p>
-                  <p>High price: {pokemon.tcgplayer.prices.holofoil.high}</p>
+                  <p>Low price: {pokemon.tcgplayer.prices.holofoil.low}$</p>
+                  <p>Mid price: {pokemon.tcgplayer.prices.holofoil.mid}$</p>
+                  <p>High price: {pokemon.tcgplayer.prices.holofoil.high}$</p>
                 </div>
               )}
             </div>

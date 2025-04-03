@@ -34,6 +34,7 @@ header ul {
 header ul li a:hover {
   background-color: var(--light);
   color: var(--dark);
+
 }
 
 header a {
@@ -48,4 +49,5 @@ header a {
   padding: 0 15px;
   border-radius: 15px;
   transition: 500ms;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.281);
 }
