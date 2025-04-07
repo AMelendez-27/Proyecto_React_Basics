@@ -7,11 +7,13 @@ import About from './pages/About/About'
 import Header from './components/Header/Header';
 import CollectionBySetId from './pages/CollectionBySetId/CollectionBySetId';
 import PokemonById from './pages/PokemonById/PokemonById';
+import CompactHeader from './components/CompactHeader/CompactHeader';
 
 const App = () => {
   return (
     <div className="app-container">
       <Header />
+      <CompactHeader />
       <div className="content">
         <Routes>
           <Route path="/" element={<Home />} />

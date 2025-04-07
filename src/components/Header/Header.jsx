@@ -1,28 +1,48 @@
-import "./Header.css"
-import React from 'react'
-import { NavLink } from "react-router-dom"
+import React, { useState, useEffect } from 'react';
+import "./Header.css";
+import { Link } from "react-router-dom";
 
 const Header = () => {
+  const [isActive, setIsActive] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth <= 820) {
+        setIsActive(true);
+      } else {
+        setIsActive(false);
+      }
+    };
+
+    handleResize();
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   return (
-    <header>
+    <header className={`main-menu ${isActive ? 'not-active' : ''}`}>
       <nav>
         <ul>
           <li>
-            <NavLink to="/" className={({isActive})  => isActive ? "active" : ""}>Home</NavLink>
+            <Link to="/">Home</Link>
           </li>
           <li>
-            <NavLink to="/browse-pokemon" className={({isActive})  => isActive ? "active" : ""}>Latest Set</NavLink>
+            <Link to="/browse-pokemon">Latest Set</Link>
           </li>
           <li>
-            <NavLink to="/explore-sets" className={({isActive})  => isActive ? "active" : ""}>Explore sets</NavLink>
+            <Link to="/explore-sets">Explore sets</Link>
           </li>
           <li>
-            <NavLink to="/about" className={({isActive})  => isActive ? "active" : ""}>About</NavLink>
+            <Link to="/about">About</Link>
           </li>
         </ul>
       </nav>
     </header>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;

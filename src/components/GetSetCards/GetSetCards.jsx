@@ -37,7 +37,7 @@ const GetSetCards = ({ set, order, cardCuantity }) => {
   }, [set, order, cardCuantity]);
 
   return (
-    <div className='home-section highest-priced-tcg-cards tcg-card-container'>
+    <div className='highest-priced-tcg-cards tcg-card-container'>
       {cardsImgs.map((cardImg) => (
           <Link key={cardImg.id} className={'browsed-tcg'} id={`${cardImg.id}`} to={`/browse-pokemon/${cardImg.id}`}>
             <img key={cardImg.id} src={cardImg.images.small} alt={`Card image of ${cardImg.name}`} />

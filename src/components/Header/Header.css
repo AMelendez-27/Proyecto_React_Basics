@@ -1,53 +1,65 @@
-header {
-  width: 890px;
-  height: 80px;
-  display: flex;
-  justify-items: center;
-  justify-content: center;
-  background-color: var(--dark);
-  border-radius: 25px;
-  position: fixed;
-  top: 30px;
-  left: 50%;
-  transform: translateX(-50%);
-  padding: 15px 20px;
+.not-active {
+  display: none;
 }
 
-header nav {
-  width: 100%;
-  height: 100%;
+.hidden-menu {
+  display: none;
 }
 
-header ul {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  justify-items: center;
-  gap: 30px;
-  font-size: 30px;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
+@media screen and (min-width: 820px) {
+  .main-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 790px;
+    height: 80px;
+    display: flex;
+    justify-items: center;
+    justify-content: center;
+    background-color: var(--dark);
+    border-radius: 25px;
+    position: fixed;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 15px 20px;
+  }
 
-header ul li a:hover {
-  background-color: var(--light);
-  color: var(--dark);
+  .main-menu nav {
+    width: 100%;
+    height: 100%;
+  }
 
-}
+  .main-menu ul {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    gap: 30px;
+    font-size: 30px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
 
-header a {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-decoration: none;
-  color: var(--very-light);
-  font-weight: bold;
-  padding: 0 15px;
-  border-radius: 15px;
-  transition: 500ms;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.281);
+  .main-menu ul li a:hover {
+    background-color: var(--light);
+    color: var(--dark);
+  }
+
+  .main-menu a {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: var(--very-light);
+    font-weight: bold;
+    padding: 0 15px;
+    border-radius: 15px;
+    transition: 500ms;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.281);
+  }
 }

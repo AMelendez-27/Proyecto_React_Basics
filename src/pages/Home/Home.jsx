@@ -5,7 +5,7 @@ import Carrusel from '../../components/Carrusel/Carrusel';
 
 const Home = () => {
   return (
-    <div className='home'>
+    <div className='home-section'>
       <div className='home-header'>
         <h1 className='home-title'>Welcome to the Pokemon Trading Card Game Library</h1>
         <h2 className='home-sub-title'>Explore the Pokemon TCG world</h2>
