@@ -37,6 +37,10 @@ const GetCardCollection = ({ filterType, collection }) => {
     fetchCards();
   }, [filterType, collection]);
 
+  if (!cardsImgs) {
+    return <div className='loading-message'>Loading...</div>;
+  }
+
   return (
     <div className='home-section multiple-tcg-card tcg-card-container'>
       {cardsImgs.map((cardImg, index) => (

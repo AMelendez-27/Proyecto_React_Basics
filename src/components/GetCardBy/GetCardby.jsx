@@ -31,6 +31,10 @@ const GetCardBy = ({ filterType, filterData }) => {
       });
   }, [filterType, filterData]);
 
+  if (!cardImg) {
+    return <div className='loading-message'>Loading...</div>;
+  }
+
   return (
     <div className='home-section single-tcg-card tcg-card-container'>
       <Link key={cardImg.id} className={'browsed-tcg'} id={`${cardImg.id}`} to={`/browse-pokemon/${cardImg.id}`}>

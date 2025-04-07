@@ -21,6 +21,10 @@ const GetSets = () => {
     fetchSets();
   }, []);
 
+  if (!setsImgs) {
+    return <div className='loading-message'>Loading...</div>;
+  }
+
   return (
     <div className='tcg-sets-container'>
       {setsImgs.map((setImg) => (

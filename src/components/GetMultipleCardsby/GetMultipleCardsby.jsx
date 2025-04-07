@@ -38,6 +38,10 @@ const GetMultipleCardsBy = ({ filterType, filterData, cardCuantity }) => {
     fetchCards();
   }, [filterType, filterData, cardCuantity]);
 
+  if (!cardsImgs) {
+    return <div className='loading-message'>Loading...</div>;
+  }
+
   return (
     <div className='home-section multiple-tcg-card tcg-card-container'>
       {cardsImgs.map((cardsImgs, index) => (

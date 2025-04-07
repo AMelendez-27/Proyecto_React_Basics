@@ -36,6 +36,10 @@ const GetSetCards = ({ set, order, cardCuantity }) => {
     fetchCards();
   }, [set, order, cardCuantity]);
 
+  if (!cardsImgs) {
+    return <div className='loading-message'>Loading...</div>;
+  }
+
   return (
     <div className='highest-priced-tcg-cards tcg-card-container'>
       {cardsImgs.map((cardImg) => (
