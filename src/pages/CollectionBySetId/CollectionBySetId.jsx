@@ -7,7 +7,7 @@ const CollectionBySetId = () => {
   const { set } = useParams()
   return (
     <div className='pokemon-set-collection-section'>
-      <h2>{set}</h2>
+      <h1>{set}</h1>
       <div>
         <GetSetCards set={set} />
       </div>
