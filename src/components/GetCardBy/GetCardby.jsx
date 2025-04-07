@@ -1,6 +1,8 @@
-import "./GetCardBy.css"
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { API_KEY } from '../../config'; // Import the API_KEY
+
+import "./GetCardBy.css"
 
 const GetCardBy = ({ filterType, filterData }) => {
   const [cardImg, setCardImg] = useState(null); // Initialize as null
@@ -22,7 +24,7 @@ const GetCardBy = ({ filterType, filterData }) => {
         return;
     }
 
-    fetch(`https://api.pokemontcg.io/v2/cards?q=${query}`)
+    fetch(`https://api.pokemontcg.io/v2/cards?q=${query}&apiKey=${API_KEY}`)
       .then(response => response.json())
       .then((response) => {
         if (response.data && response.data.length > 0) {

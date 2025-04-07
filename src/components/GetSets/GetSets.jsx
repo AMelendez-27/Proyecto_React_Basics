@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { API_KEY } from '../../config'; // Import the API_KEY
+
 import "./GetSets.css";
 
 const GetSets = () => {
@@ -8,7 +10,7 @@ const GetSets = () => {
   useEffect(() => {
     const fetchSets = async () => {
       try {
-        const response = await fetch(`https://api.pokemontcg.io/v2/sets?orderBy=-releaseDate&apiKey=aff71417-95ac-4d2e-bf51-891f3e425a5e`);
+        const response = await fetch(`https://api.pokemontcg.io/v2/sets?orderBy=-releaseDate&apiKey=${API_KEY}`);
         const data = await response.json();
         if (data.data && data.data.length > 0) {
           setSetsImgs(data.data);

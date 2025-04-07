@@ -1,7 +1,8 @@
 import React from 'react'
-import './CollectionBySetId.css'
 import { useParams } from 'react-router-dom'
 import GetSetCards from '../../components/GetSetCards/GetSetCards'
+
+import './CollectionBySetId.css'
 
 const CollectionBySetId = () => {
   const { set } = useParams()

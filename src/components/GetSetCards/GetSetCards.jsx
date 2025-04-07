@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { API_KEY } from '../../config'; // Import the API_KEY
+
 import "./GetSetCards.css";
 
 const GetSetCards = ({ set, order, cardCuantity }) => {
@@ -22,7 +24,7 @@ const GetSetCards = ({ set, order, cardCuantity }) => {
     const fetchCards = async () => {
       try {
         // Fetch cards from the API based on the set name
-        const response = await fetch(`https://api.pokemontcg.io/v2/cards?q=set.name:"${set}"${orderQuery}${cuantityQuery}&apiKey=aff71417-95ac-4d2e-bf51-891f3e425a5e`);
+        const response = await fetch(`https://api.pokemontcg.io/v2/cards?q=set.name:"${set}"${orderQuery}${cuantityQuery}&apiKey=${API_KEY}`);
         const data = await response.json();
         if (data.data && data.data.length > 0) {
           setCardsImgs(data.data); // Store the fetched cards
