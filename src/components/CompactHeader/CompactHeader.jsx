@@ -32,7 +32,7 @@ const CompactHeader = () => {
   return (
     isHeaderVisible && (
       <header className={`compact-menu ${isMenuVisible ? 'resize-menu' : ''}`}>
-        <img className="menu-icon" src="/src/assets/menu-icon.png" alt="Menu icon" onClick={toggleMenu} />
+        <img className="menu-icon" src="/assets/menu-icon.png" alt="Menu icon" onClick={toggleMenu} />
         <nav className={`compact-nav ${isMenuVisible ? '' : 'hidden-menu'}`}>
           <ul className='compact-menu-list'>
             <li className='compact-menu-item'>

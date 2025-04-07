@@ -24,7 +24,7 @@ const GetCardInfo = ({ id }) => { // Destructure id from props
   if (!pokemon) {
     return (
       <div className='loading-message'>
-        <img src="/src/assets/loading.gif" alt="Loading..." /> {/* Replace with the path to your GIF */}
+        <img src="/assets/loading.gif" alt="Loading..." /> {/* Replace with the path to your GIF */}
       </div>
     ); // Show loading GIF while fetching
   }
