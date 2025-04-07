@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import "./Carrusel.css";
 
 const Carrusel = ({ set, order, cardCuantity }) => {
-  const [cardsImgs, setCardsImgs] = useState([]);
+  const [cardsImgs, setCardsImgs] = useState(null); // Initialize as null
 
   useEffect(() => {
     let orderQuery = '';
@@ -35,6 +35,14 @@ const Carrusel = ({ set, order, cardCuantity }) => {
 
     fetchCards();
   }, [set, order, cardCuantity]);
+
+  if (!cardsImgs) {
+    return (
+      <div className='loading-message'>
+        <img src="/src/assets/loading.gif" alt="Loading..." /> {/* Replace with the path to your GIF */}
+      </div>
+    ); // Show loading GIF while fetching
+  }
 
   return (
     <div className="carrusel-container">

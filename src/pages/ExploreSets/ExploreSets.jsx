@@ -4,7 +4,7 @@ import GetSets from '../../components/GetSets/GetSets'
 
 const ExploreSets = () => {
   return (
-<div className='pokemon-browser-section'>
+<div className='pokemon-set-browser-section'>
       <div className='pokemon-browser browser-container'>
         <h1 className='pokemon-browser browser-title'>Explore sets</h1>
       </div>

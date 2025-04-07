@@ -58,6 +58,13 @@ p {
   margin: 140px 0 70px 0;
 }
 
+.loading-message img {
+  width: 100px; /* Adjust size */
+  height: 100px;
+  display: block;
+  margin: 0 auto; /* Center the GIF */
+}
+
 @media screen and (min-width: 891px) and (max-width: 908px) {
   h1 {
     color: var(--Tt);

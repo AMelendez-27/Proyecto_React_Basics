@@ -2,7 +2,7 @@ import "./GetCardCollection.css"
 import React, { useState, useEffect } from 'react';
 
 const GetCardCollection = ({ filterType, collection }) => {
-  const [cardsImgs, setCardsImgs] = useState([]);
+  const [cardsImgs, setCardsImgs] = useState(null); // Initialize as null
 
   useEffect(() => {
     const fetchCards = async () => {
@@ -38,7 +38,11 @@ const GetCardCollection = ({ filterType, collection }) => {
   }, [filterType, collection]);
 
   if (!cardsImgs) {
-    return <div className='loading-message'>Loading...</div>;
+    return (
+      <div className='loading-message'>
+        <img src="/src/assets/loading.gif" alt="Loading..." /> {/* Replace with the path to your GIF */}
+      </div>
+    );
   }
 
   return (

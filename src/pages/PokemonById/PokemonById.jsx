@@ -3,15 +3,16 @@ import './PokemonById.css';
 import { useParams } from 'react-router-dom';
 
 const PokemonById = () => {
-  const { id } = useParams();
-  const [pokemon, setPokemon] = useState(null);
+  const { id } = useParams(); // Extract the Pokemon ID from the URL
+  const [pokemon, setPokemon] = useState(null); // State to store the fetched Pokemon data
 
   useEffect(() => {
+    // Fetch Pokemon data by ID from the API
     fetch(`https://api.pokemontcg.io/v2/cards?q=id:${id}`)
       .then((response) => response.json())
       .then((response) => {
         if (response.data && response.data.length > 0) {
-          setPokemon(response.data[0]);
+          setPokemon(response.data[0]); // Set the first result as the Pokemon
         }
       })
       .catch((error) => {
@@ -20,7 +21,7 @@ const PokemonById = () => {
   }, [id]);
 
   if (!pokemon) {
-    return <div className='loading-message'>Loading...</div>;
+    return <div className='loading-message'>Loading...</div>; // Show loading message while fetching
   }
 
   return (
@@ -38,7 +39,7 @@ const PokemonById = () => {
           <p>Release date: {pokemon.set.releaseDate}</p>
         </div>
 
-        {/* Renderiza pokemon-prices solo si pokemon.tcgplayer existe */}
+        {/* Render card prices only if the data exists */}
         {pokemon.tcgplayer && pokemon.tcgplayer.prices && (
           <div className='card-prices-container'>
             <h2>Card market prices</h2>

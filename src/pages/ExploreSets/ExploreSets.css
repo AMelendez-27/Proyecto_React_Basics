@@ -1,4 +1,4 @@
-.pokemon-browser-section {
+.pokemon-set-browser-section {
   display: flex;
   flex-direction: column;
   width: 90vw;
@@ -8,6 +8,10 @@
 #sets-showcase {
   width: 100%;
   height: fit-content;
+}
+
+#sets-showcase .loading-message {
+  margin-top: 200px;
 }
 
 .tcg-sets-container {

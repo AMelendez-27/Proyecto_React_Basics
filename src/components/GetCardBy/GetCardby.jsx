@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 const GetCardBy = ({ filterType, filterData }) => {
-  const [cardImg, setCardImg] = useState([]);
+  const [cardImg, setCardImg] = useState(null); // Initialize as null
 
   useEffect(() => {
     let query = '';
@@ -32,7 +32,11 @@ const GetCardBy = ({ filterType, filterData }) => {
   }, [filterType, filterData]);
 
   if (!cardImg) {
-    return <div className='loading-message'>Loading...</div>;
+    return (
+      <div className='loading-message'>
+        <img src="/src/assets/loading.gif" alt="Loading..." /> {/* Replace with the path to your GIF */}
+      </div>
+    );
   }
 
   return (

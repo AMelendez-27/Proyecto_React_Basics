@@ -1,0 +1,10 @@
+.pokemon-set-collection-section {
+  display: flex;
+  flex-direction: column;
+  width: 90vw;
+  gap: 30px;
+}
+
+.pokemon-set-collection-section .loading-message {
+  margin-top: 200px;
+}

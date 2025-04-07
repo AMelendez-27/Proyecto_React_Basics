@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import "./GetSets.css";
 
 const GetSets = () => {
-  const [setsImgs, setSetsImgs] = useState([]);
+  const [setsImgs, setSetsImgs] = useState(null); // Initialize as null
 
   useEffect(() => {
     const fetchSets = async () => {
@@ -22,7 +22,11 @@ const GetSets = () => {
   }, []);
 
   if (!setsImgs) {
-    return <div className='loading-message'>Loading...</div>;
+    return (
+      <div className='loading-message'>
+        <img src="/src/assets/loading.gif" alt="Loading..." /> {/* Replace with the path to your GIF */}
+      </div>
+    );
   }
 
   return (

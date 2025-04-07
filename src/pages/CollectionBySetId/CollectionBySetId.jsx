@@ -6,7 +6,7 @@ import GetSetCards from '../../components/GetSetCards/GetSetCards'
 const CollectionBySetId = () => {
   const { set } = useParams()
   return (
-    <div>
+    <div className='pokemon-set-collection-section'>
       <h2>{set}</h2>
       <div>
         <GetSetCards set={set} />
