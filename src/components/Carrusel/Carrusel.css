@@ -39,12 +39,33 @@
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-100%);
+    transform: translateX(-140%);
   }
 }
 
+@media screen and (min-width: 3456px) {
+  @keyframes moverImagenes {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-105.4%);
+    }
+  }
+}
 
-@media screen and (min-width: 2540px) {
+@media screen and (min-width: 2560px) and (max-width: 3455px){
+  @keyframes moverImagenes {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-107.4%);
+    }
+  }
+}
+
+@media screen and (min-width: 2540px) and (max-width: 2559px){
   @keyframes moverImagenes {
     0% {
       transform: translateX(0);
