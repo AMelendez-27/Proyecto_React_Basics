@@ -43,9 +43,9 @@ const GetSetCards = ({ set, order, cardCuantity }) => {
   if (!cardsImgs) {
     return (
       <div className='loading-message'>
-        <img src="/assets/loading.gif" alt="Loading..." /> {/* Replace with the path to your GIF */}
+        <img src="/src/assets/loading.gif" alt="Loading..." />
       </div>
-    );
+    ); // Show loading GIF while fetching
   }
 
   return (
