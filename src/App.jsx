@@ -8,6 +8,7 @@ import Header from './components/Header/Header';
 import CollectionBySetId from './pages/CollectionBySetId/CollectionBySetId';
 import PokemonById from './pages/PokemonById/PokemonById';
 import CompactHeader from './components/CompactHeader/CompactHeader';
+import Footer from './components/Footer/Footer';
 
 const App = () => {
   return (
@@ -25,6 +26,7 @@ const App = () => {
           <Route path="/about" element={<About />} />
         </Routes>
       </div>
+      <Footer/>
     </div>
   );
 };
