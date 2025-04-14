@@ -1,29 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { API_KEY } from '../../config'; // Import the API_KEY
+import useFetch from '../../hooks/useFetch.jsx';
 
 import "./GetSets.css";
 
 const GetSets = () => {
-  const [setsImgs, setSetsImgs] = useState(null); // Initialize as null
+  const { data: setsImgs, loading } = useFetch(`https://api.pokemontcg.io/v2/sets?orderBy=-releaseDate&apiKey=${API_KEY}`);
 
-  useEffect(() => {
-    const fetchSets = async () => {
-      try {
-        const response = await fetch(`https://api.pokemontcg.io/v2/sets?orderBy=-releaseDate&apiKey=${API_KEY}`);
-        const data = await response.json();
-        if (data.data && data.data.length > 0) {
-          setSetsImgs(data.data);
-        }
-      } catch (error) {
-        console.error("Error fetching sets:", error);
-      }
-    };
-
-    fetchSets();
-  }, []);
-
-  if (!setsImgs) {
+  if (loading) {
     return (
       <div className='loading-message'>
         <img src="/src/assets/loading.gif" alt="Loading..." />

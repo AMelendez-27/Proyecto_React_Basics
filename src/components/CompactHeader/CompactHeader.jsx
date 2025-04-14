@@ -1,29 +1,50 @@
 import './CompactHeader.css';
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useReducer, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 
+// Estado inicial para el reducer
+const initialState = {
+  isMenuVisible: false,
+  isHeaderVisible: true,
+};
+
+// Reducer para manejar las acciones
+const reducer = (state, action) => {
+  switch (action.type) {
+    case 'TOGGLE_MENU':
+      return { ...state, isMenuVisible: !state.isMenuVisible };
+    case 'CLOSE_MENU':
+      return { ...state, isMenuVisible: false };
+    case 'SHOW_HEADER':
+      return { ...state, isHeaderVisible: true };
+    case 'HIDE_HEADER':
+      return { ...state, isHeaderVisible: false };
+    default:
+      return state;
+  }
+};
+
 const CompactHeader = () => {
-  const [isMenuVisible, setIsMenuVisible] = useState(false);
-  const [isHeaderVisible, setIsHeaderVisible] = useState(true);
+  const [state, dispatch] = useReducer(reducer, initialState);
   const menuRef = useRef(null);
 
   const toggleMenu = () => {
-    setIsMenuVisible((prevState) => !prevState);
+    dispatch({ type: 'TOGGLE_MENU' });
   };
 
   const handleClickOutside = (event) => {
     if (menuRef.current && !menuRef.current.contains(event.target)) {
-      setIsMenuVisible(false);
+      dispatch({ type: 'CLOSE_MENU' });
     }
   };
 
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth > 820) {
-        setIsHeaderVisible(false);
-        setIsMenuVisible(false);
+        dispatch({ type: 'HIDE_HEADER' });
+        dispatch({ type: 'CLOSE_MENU' });
       } else {
-        setIsHeaderVisible(true);
+        dispatch({ type: 'SHOW_HEADER' });
       }
     };
 
@@ -38,21 +59,26 @@ const CompactHeader = () => {
   }, []);
 
   return (
-    isHeaderVisible && (
-      <header ref={menuRef} className={`compact-menu ${isMenuVisible ? 'resize-menu' : ''}`}>
-        <img className="menu-icon" src="/src/assets/menu-icon.png" alt="Menu icon" onClick={toggleMenu} />
-        <nav className={`compact-nav ${isMenuVisible ? '' : 'hidden-menu'}`}>
-          <ul className='compact-menu-list'>
-            <li className='compact-menu-item' onClick={() => setIsMenuVisible(false)}>
+    state.isHeaderVisible && (
+      <header ref={menuRef} className={`compact-menu ${state.isMenuVisible ? 'resize-menu' : ''}`}>
+        <img
+          className="menu-icon"
+          src="/src/assets/menu-icon.png"
+          alt="Menu icon"
+          onClick={toggleMenu}
+        />
+        <nav className={`compact-nav ${state.isMenuVisible ? '' : 'hidden-menu'}`}>
+          <ul className="compact-menu-list">
+            <li className="compact-menu-item" onClick={() => dispatch({ type: 'CLOSE_MENU' })}>
               <Link to="/">Home</Link>
             </li>
-            <li className='compact-menu-item' onClick={() => setIsMenuVisible(false)}>
+            <li className="compact-menu-item" onClick={() => dispatch({ type: 'CLOSE_MENU' })}>
               <Link to="/browse-pokemon">Latest Set</Link>
             </li>
-            <li className='compact-menu-item' onClick={() => setIsMenuVisible(false)}>
+            <li className="compact-menu-item" onClick={() => dispatch({ type: 'CLOSE_MENU' })}>
               <Link to="/explore-sets">Explore sets</Link>
             </li>
-            <li className='compact-menu-item' onClick={() => setIsMenuVisible(false)}>
+            <li className="compact-menu-item" onClick={() => dispatch({ type: 'CLOSE_MENU' })}>
               <Link to="/about">About</Link>
             </li>
           </ul>

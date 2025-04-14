@@ -8,20 +8,16 @@ const GetCardBy = ({ filterType, filterData }) => {
   const [cardImg, setCardImg] = useState(null); // Initialize as null
 
   useEffect(() => {
-    let query = '';
-    switch (filterType) {
-      case 'id':
-        query = `id:${filterData}`;
-        break;
-      case 'name':
-        query = `name:${filterData}`;
-        break;
-      case 'set':
-        query = `set.id:${filterData}`;
-        break;
-      default:
-        console.error('Invalid filter type');
-        return;
+    const queryMap = {
+      id: `id:${filterData}`,
+      name: `name:${filterData}`,
+      set: `set.id:${filterData}`,
+    };
+
+    const query = queryMap[filterType];
+    if (!query) {
+      console.error('Invalid filter type');
+      return;
     }
 
     fetch(`https://api.pokemontcg.io/v2/cards?q=${query}&apiKey=${API_KEY}`)

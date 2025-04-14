@@ -22,13 +22,13 @@ footer {
 
 .footer-icon {
   display: inline-block;
-  width: 40px;;
+  width: 40px;
   height: 40px;
   cursor: pointer;
+  transition: transform 300ms;
 }
 
 .footer-icon:hover { 
-  transition: 300ms;
-  width: 60px;;
-  height: 60px;
+  transform: scale(1.5); /* Agranda el icono */
+  filter: brightness(0) saturate(100%) invert(14%) sepia(11%) saturate(746%) hue-rotate(180deg) brightness(91%) contrast(89%);
 }

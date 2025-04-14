@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Home from './pages/Home/Home';
 import BrowsePokemon from './pages/BrowsePokemon/BrowsePokemon';
@@ -11,10 +11,22 @@ import CompactHeader from './components/CompactHeader/CompactHeader';
 import Footer from './components/Footer/Footer';
 
 const App = () => {
+  const [isCompact, setIsCompact] = useState(window.innerWidth <= 820);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsCompact(window.innerWidth <= 820);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   return (
     <div className="app-container">
-      <Header /> {/* Main header for larger screens */}
-      <CompactHeader /> {/* Compact header for smaller screens */}
+      {isCompact ? <CompactHeader /> : <Header />}
       <div className="content">
         <Routes>
           {/* Define routes for different pages */}
@@ -26,7 +38,7 @@ const App = () => {
           <Route path="/about" element={<About />} />
         </Routes>
       </div>
-      <Footer/>
+      <Footer />
     </div>
   );
 };
