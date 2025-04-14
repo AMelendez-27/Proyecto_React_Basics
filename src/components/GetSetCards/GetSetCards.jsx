@@ -7,12 +7,16 @@ import './GetSetCards.css';
 
 const GetSetCards = ({ set, order, cardCuantity }) => {
   // Build query parameters for ordering and limiting results
-  const orderMap = new Map([
-    ['highestFirst', '&orderBy=-tcgplayer.prices.holofoil.mid'],
-    ['lowestFirst', '&orderBy=tcgplayer.prices.holofoil.mid'],
-  ]);
+  let orderQuery = '';
+  switch (order) {
+    case 'highestFirst':
+      orderQuery = `&orderBy=-tcgplayer.prices.holofoil.mid`;
+      break;
+    case 'lowestFirst':
+      orderQuery = `&orderBy=tcgplayer.prices.holofoil.mid`;
+      break;
+  }
 
-  const orderQuery = orderMap.get(order) || ''; // Default to an empty string if order is not found
   const cuantityQuery = cardCuantity ? `&pageSize=${cardCuantity}` : '';
   const url = `https://api.pokemontcg.io/v2/cards?q=set.name:"${set}"${orderQuery}${cuantityQuery}&apiKey=${API_KEY}`;
 
